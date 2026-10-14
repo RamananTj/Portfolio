@@ -17,6 +17,201 @@ themeButton.addEventListener("click", function () {
 });
 
 /* =====================================================
+   DYNAMIC HERO ROLE
+   ===================================================== */
+
+const roles = [
+  "Full stack .NET Developer",
+  "Java Developer",
+  "Software Developer",
+];
+
+const roleText = document.getElementById("roleText");
+
+const roleChips = document.querySelectorAll(".role-chip");
+
+let activeRoleIndex = 0;
+
+let roleTimer;
+
+function setActiveRole(index) {
+  activeRoleIndex = index;
+
+  roleText.classList.add("is-changing");
+
+  setTimeout(function () {
+    roleText.textContent = roles[activeRoleIndex];
+
+    roleChips.forEach(function (chip, chipIndex) {
+      chip.classList.toggle("active", chipIndex === activeRoleIndex);
+    });
+
+    roleText.classList.remove("is-changing");
+  }, 220);
+}
+
+function scheduleRoleRotation() {
+  clearInterval(roleTimer);
+
+  roleTimer = setInterval(function () {
+    const nextRoleIndex = (activeRoleIndex + 1) % roles.length;
+
+    setActiveRole(nextRoleIndex);
+  }, 2600);
+}
+
+roleChips.forEach(function (chip) {
+  chip.addEventListener("click", function () {
+    const nextRoleIndex = Number(chip.dataset.roleIndex);
+
+    setActiveRole(nextRoleIndex);
+
+    scheduleRoleRotation();
+  });
+});
+
+scheduleRoleRotation();
+
+/* =====================================================
+   PROJECT FILTERS
+   ===================================================== */
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+const projectCards = document.querySelectorAll(".project-card");
+
+filterButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const selectedFilter = button.dataset.filter;
+
+    filterButtons.forEach(function (filterButton) {
+      filterButton.classList.toggle("active", filterButton === button);
+    });
+
+    projectCards.forEach(function (card) {
+      const cardCategory = card.dataset.category;
+
+      const shouldShow =
+        selectedFilter === "all" || cardCategory === selectedFilter;
+
+      card.classList.toggle("hidden", !shouldShow);
+    });
+  });
+});
+
+/* =====================================================
+   EXPERIENCE TV
+   ===================================================== */
+
+const experienceTv = document.querySelector(".experience-tv");
+
+const experienceSlides = document.querySelectorAll(".experience-slide");
+
+const experienceDots = document.querySelectorAll(".experience-dot");
+
+const experienceCounter = document.getElementById("experienceCounter");
+
+const experiencePrev = document.getElementById("experiencePrev");
+
+const experienceNext = document.getElementById("experienceNext");
+
+let activeExperienceIndex = 0;
+
+let touchStartX = 0;
+
+function showExperience(index) {
+  activeExperienceIndex =
+    (index + experienceSlides.length) % experienceSlides.length;
+
+  experienceSlides.forEach(function (slide, slideIndex) {
+    slide.classList.toggle("active", slideIndex === activeExperienceIndex);
+    slide.setAttribute(
+      "aria-hidden",
+      String(slideIndex !== activeExperienceIndex),
+    );
+
+    if (slideIndex === activeExperienceIndex) {
+      slide.scrollTop = 0;
+    }
+  });
+
+  experienceDots.forEach(function (dot, dotIndex) {
+    dot.classList.toggle("active", dotIndex === activeExperienceIndex);
+  });
+
+  experienceCounter.textContent = `${String(activeExperienceIndex + 1).padStart(2, "0")} / ${String(experienceSlides.length).padStart(2, "0")}`;
+}
+
+experiencePrev.addEventListener("click", function () {
+  showExperience(activeExperienceIndex - 1);
+});
+
+experienceNext.addEventListener("click", function () {
+  showExperience(activeExperienceIndex + 1);
+});
+
+experienceDots.forEach(function (dot) {
+  dot.addEventListener("click", function () {
+    showExperience(Number(dot.dataset.experienceIndex));
+  });
+});
+
+experienceTv.addEventListener("keydown", function (event) {
+  if (event.key === "ArrowLeft") {
+    showExperience(activeExperienceIndex - 1);
+  }
+
+  if (event.key === "ArrowRight") {
+    showExperience(activeExperienceIndex + 1);
+  }
+});
+
+experienceTv.addEventListener("touchstart", function (event) {
+  touchStartX = event.touches[0].clientX;
+});
+
+experienceTv.addEventListener("touchend", function (event) {
+  const touchEndX = event.changedTouches[0].clientX;
+
+  const swipeDistance = touchEndX - touchStartX;
+
+  if (Math.abs(swipeDistance) < 45) {
+    return;
+  }
+
+  if (swipeDistance > 0) {
+    showExperience(activeExperienceIndex - 1);
+  } else {
+    showExperience(activeExperienceIndex + 1);
+  }
+});
+
+/* =====================================================
+   SCROLL REVEAL
+   ===================================================== */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.18,
+  },
+);
+
+revealElements.forEach(function (element) {
+  revealObserver.observe(element);
+});
+
+/* =====================================================
    CONTACT FORM
    ===================================================== */
 
