@@ -115,29 +115,43 @@
       <section id="about" class="section">
         <h2 class="section-title">About Me</h2>
 
-        <div class="about-container">
-          <div class="about-text reveal">
-            <p>
-              A Full stack .NET developer with a total of 2 years of
-              professional experience building web and windows application.
-            </p>
+        <div class="about-card-grid reveal">
+          <article class="about-card about-card-feature">
+            <span class="about-chip">Developer profile</span>
+            <h3>
+              A <mark>Full stack .NET developer</mark> with 2+ years building
+              web and Windows applications.
+            </h3>
+          </article>
 
+          <article class="about-card">
+            <span class="about-chip">Core stack</span>
             <p>
-              I work with C#, ASP.NET Core, Web API, Entity Framework, SQL,
-              HTML, CSS, JavaScript and React. I enjoy solving real-world
-              problems, learning new technologies, and building reliable,
-              user-friendly application.
+              I work with
+              <mark>C#, ASP.NET Core, Web API, Entity Framework, SQL</mark>,
+              HTML, CSS, JavaScript and React.
             </p>
+          </article>
 
-            <!-- Strong and emphasized text -->
+          <article class="about-card">
+            <span class="about-chip">Engineering mindset</span>
+            <p>
+              I enjoy <mark>solving real-world problems</mark>, learning new
+              technologies, and building reliable, user-friendly applications.
+            </p>
+          </article>
+
+          <article class="about-card">
+            <span class="about-chip">Current growth</span>
             <p>
               Currently, I am strengthening my skills in
-              <strong>React and Java</strong>
-              while expanding my <em>Full-Stack development</em> expertise.
+              <strong>React and Java</strong> while expanding my
+              <em>Full-Stack development</em> expertise.
             </p>
-          </div>
+          </article>
 
-          <div class="about-info reveal">
+          <article class="about-card about-card-contact">
+            <span class="about-chip">Contact</span>
             <p><strong>Name:</strong> Ramanan G</p>
             <p><strong>Location:</strong> Tamil Nadu, India</p>
             <p>
@@ -147,16 +161,17 @@
                 >ramanangkofficial@gmail.com</a
               >
             </p>
-            <p><strong>Experience:</strong> 2+ Years</p>
-            <p>
-              <strong><u>Specialization</u></strong>
-            </p>
+          </article>
+
+          <article class="about-card about-card-special">
+            <span class="about-chip">Specialization</span>
             <p><strong>Primary:</strong> Full-stack .NET Development</p>
             <p>
               <strong>Secondary:</strong> Java Full-Stack Development, React
               Development
             </p>
-          </div>
+            <p><strong>Experience:</strong> 2+ Years</p>
+          </article>
         </div>
       </section>
 
@@ -167,20 +182,13 @@
         <div class="experience-stage reveal">
           <div class="viewer-scene" aria-hidden="true">
             <div class="office-window"></div>
-            <div class="office-plant"></div>
-            <div class="viewer-head"></div>
-            <div class="viewer-hair"></div>
-            <div class="viewer-neck"></div>
-            <div class="viewer-body"></div>
-            <div class="viewer-shirt"></div>
-            <div class="viewer-arm"></div>
-            <div class="viewer-folder"></div>
-            <div class="viewer-leg viewer-leg-left"></div>
-            <div class="viewer-leg viewer-leg-right"></div>
-            <div class="viewer-shoe viewer-shoe-left"></div>
-            <div class="viewer-shoe viewer-shoe-right"></div>
-            <div class="viewer-badge"></div>
-            <div class="viewer-shadow"></div>
+            <!-- <div class="office-plant"></div> -->
+            <img
+              class="viewer-person"
+              src="../image/experience-recruiter.png"
+              alt=""
+            />
+            <!-- <div class="viewer-shadow"></div> -->
           </div>
 
           <div class="tv-wrap">
@@ -376,106 +384,116 @@
       <section id="skills" class="section skills-section">
         <h2 class="section-title">My Skills</h2>
 
-        <div class="skills-container">
-          <!-- Skill Card -->
-          <article class="skill-card reveal">
-            <h3>HTML</h3>
-            <p>
-              Semantic HTML, forms, tables, links, images and page structure.
-            </p>
-
-            <div class="progress">
-              <div class="progress-bar html-progress">90%</div>
+        <div class="skills-showcase reveal">
+          <div class="skills-header">
+            <div>
+              <p class="skills-kicker">Skill evidence</p>
+              <h3>Tools I can ship with</h3>
             </div>
-          </article>
 
-          <article class="skill-card reveal">
-            <h3>CSS</h3>
-            <p>
-              Selectors, box model, Flexbox, Grid, animations and responsive
-              design.
-            </p>
-
-            <div class="progress">
-              <div class="progress-bar css-progress">80%</div>
+            <div class="skill-legend" aria-label="Skill experience legend">
+              <span class="skill-level level-pro">Professional experience</span>
+              <span class="skill-level level-practical"
+                >Practical experience</span
+              >
+              <span class="skill-level level-working">Working knowledge</span>
             </div>
-          </article>
-
-          <article class="skill-card reveal">
-            <h3>JavaScript</h3>
-            <p>
-              Variables, functions, arrays, DOM manipulation and event handling.
-            </p>
-
-            <div class="progress">
-              <div class="progress-bar js-progress">90%</div>
-            </div>
-          </article>
-
-          <article class="skill-card reveal">
-            <h3>.NET</h3>
-            <p>
-              ASP.NET Core, .NET Framework, ASP.NET Web API, MVC Architecture,
-              Multi-tier Architecture, Repository Pattern Enitity Framework,
-              LINQ.
-            </p>
-
-            <div class="progress">
-              <div class="progress-bar DotNET-progress">95%</div>
-            </div>
-          </article>
-
-          <article class="skill-card reveal">
-            <h3>Java</h3>
-            <p>JDBC, Hibernate, HQL, Spring Boot Framework, JPA, Maven.</p>
-
-            <div class="progress">
-              <div class="progress-bar Java-progress">90%</div>
-            </div>
-          </article>
-
-          <article class="skill-card reveal">
-            <h3>SQL</h3>
-            <p>MySQL, PostgreSQL, Oracle Database(PL/SQL).</p>
-
-            <div class="progress">
-              <div class="progress-bar SQL-progress">90%</div>
-            </div>
-          </article>
-        </div>
-
-        <!-- HTML list examples -->
-        <div class="lists">
-          <div>
-            <h3>Technical Skills</h3>
-
-            <ul>
-              <li>Frontend: HTML5, CSS3, JavaScript</li>
-              <li>
-                Dotnet: .NET Core, .NET Framework, Entity Framework, LINQ,
-                ADO.NET, ASP.NET Web API
-              </li>
-              <li>Java: Hibernate, JDBC, Spring Framework</li>
-              <li>MySQL, PostgreSQL, Oracle Database(PL/SQL)</li>
-              <li>Architecture: Three-Tier, MVC, Multi-Tier, Microservice</li>
-              <li>Design Patterns: Repository Pattern, Dependency Injection</li>
-              <li>Version Control: Git, GitHub, GitLab, TFS</li>
-              <li>Unit Testing: xUnit, NUnit,Pytest</li>
-            </ul>
           </div>
 
-          <div>
-            <h3>Soft Skills</h3>
+          <div class="skills-layout">
+            <article class="skill-cluster skill-cluster-feature">
+              <p class="cluster-label">Primary strength</p>
+              <h3>Backend Development</h3>
+              <div class="skill-tags">
+                <span class="skill-tag level-pro">.NET</span>
+                <span class="skill-tag level-pro">C#</span>
+                <span class="skill-tag level-pro">ASP.NET Core</span>
+                <span class="skill-tag level-pro">Web API</span>
+                <span class="skill-tag level-pro">Entity Framework Core</span>
+                <span class="skill-tag level-pro">LINQ</span>
+                <span class="skill-tag level-practical">Java</span>
+                <span class="skill-tag level-practical">Spring Boot</span>
+                <span class="skill-tag level-practical">Hibernate</span>
+                <span class="skill-tag level-practical">JDBC</span>
+              </div>
+              <p>
+                Built production APIs, CRUD workflows, validation layers, report
+                modules, and backend integrations across professional and
+                project environments.
+              </p>
+            </article>
 
-            <ul>
-              <li>Problem Solving</li>
-              <li>Communication</li>
-              <li>Teamwork</li>
-              <li>Time Management</li>
-              <li>Leadership</li>
-              <li>Adaptability</li>
-              <li>Empathy</li>
-            </ul>
+            <article class="skill-cluster">
+              <p class="cluster-label">Data layer</p>
+              <h3>Databases & SQL</h3>
+              <div class="skill-tags">
+                <span class="skill-tag level-pro">SQL</span>
+                <span class="skill-tag level-pro">Oracle</span>
+                <span class="skill-tag level-pro">MySQL</span>
+                <span class="skill-tag level-pro">PostgreSQL</span>
+                <span class="skill-tag level-practical">PL/SQL</span>
+                <span class="skill-tag level-practical">SQLLoader</span>
+              </div>
+              <p>
+                Designed tables, optimized inserts, handled EF Core mappings,
+                and worked with structured datasets from Excel to Oracle.
+              </p>
+            </article>
+
+            <article class="skill-cluster">
+              <p class="cluster-label">Interface layer</p>
+              <h3>Frontend Development</h3>
+              <div class="skill-tags">
+                <span class="skill-tag level-working">HTML5</span>
+                <span class="skill-tag level-working">CSS3</span>
+                <span class="skill-tag level-working">JavaScript</span>
+                <span class="skill-tag level-practical">React.js</span>
+                <span class="skill-tag level-working">Bootstrap</span>
+                <span class="skill-tag level-working">jQuery</span>
+              </div>
+              <p>
+                Built responsive UI components, integrated API responses, and
+                shaped user-friendly screens for web products.
+              </p>
+            </article>
+
+            <article class="skill-cluster">
+              <p class="cluster-label">Delivery</p>
+              <h3>Tools & Quality</h3>
+              <div class="skill-tags">
+                <span class="skill-tag level-pro">Git</span>
+                <span class="skill-tag level-pro">Postman</span>
+                <span class="skill-tag level-pro">Swagger/OpenAPI</span>
+                <span class="skill-tag level-practical">Fortify</span>
+                <span class="skill-tag level-practical">Burp Suite</span>
+                <span class="skill-tag level-working">xUnit</span>
+                <span class="skill-tag level-working">NUnit</span>
+                <span class="skill-tag level-working">Pytest</span>
+              </div>
+              <p>
+                Tested APIs, documented endpoints, tracked versions, fixed
+                security issues, and supported release/regression cycles.
+              </p>
+            </article>
+
+            <article class="skill-cluster">
+              <p class="cluster-label">System thinking</p>
+              <h3>Architecture & Patterns</h3>
+              <div class="skill-tags">
+                <span class="skill-tag level-pro">MVC</span>
+                <span class="skill-tag level-pro">Repository Pattern</span>
+                <span class="skill-tag level-pro">Dependency Injection</span>
+                <span class="skill-tag level-practical"
+                  >Multi-tier Architecture</span
+                >
+                <span class="skill-tag level-practical">Microservices</span>
+                <span class="skill-tag level-practical">Windows Forms</span>
+              </div>
+              <p>
+                Comfortable organizing code into maintainable layers and
+                connecting UI, business logic, data access, and reporting.
+              </p>
+            </article>
           </div>
         </div>
       </section>
