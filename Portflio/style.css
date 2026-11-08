@@ -1316,6 +1316,46 @@ tr:hover {
   gap: 20px;
 }
 
+.back-to-top {
+    position: absolute;
+    margin-left: 1850px;    
+    margin-top: -10px;       
+    
+    /* Shape and Sizing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;          /* Enhanced width */
+    height: 40px;         /* Enhanced height */
+    border-radius: 50%;   /* Perfect circle */
+    
+    /* Styling */
+    color: #00008B; 
+    border: 2px solid #000000; 
+    background: #ADD8E6;
+    font-size: 22px;      /* Enhanced arrow size */
+    text-decoration: none;
+    cursor: pointer;        
+	
+   transform: translateY(1px) scale(0.9);  
+
+  /* Smooth transitions for both revealing and hovering */
+  transition: 
+    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+   z-index: 9999;
+}
+
+.back-to-top:hover {
+  background: #ffffff; /* Inverts background color on hover */
+  color: #111111; /* Darkens arrow color */
+  border-color: #ffffff;
+  box-shadow: 0 12px 40px 0 rgba(255, 255, 255, 0.25), 0 8px 16px 0 rgba(0, 0, 0, 0.3);
+  transform: translateY(-10px) scale(1.15); /* Lifts button slightly and scales up */
+}
 .social-links a {
   color: var(--primary-bright);
 
